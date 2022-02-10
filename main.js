@@ -1,3 +1,4 @@
+// card Distribution function
 const cardDistribution = (data) =>{
 
     const array = [];
@@ -18,6 +19,8 @@ const cardDistribution = (data) =>{
     console.log(sortData(array));
 }
 
+
+// data sorting function
 const sortData = (array) => {
     let done = false;
     while (!done) {
@@ -35,6 +38,8 @@ const sortData = (array) => {
     return array;
   }
 
+
+// card number generator function
 const generateCardNumber = (item, id) =>{
 
     const districtCode = firstTwo(item.district).toUpperCase();
@@ -50,6 +55,7 @@ const generateCardNumber = (item, id) =>{
     return districtCode + cYearCode + postCode + item.birthYear + Zero + serial;
 }
 
+// choose gift type 
 const giftType = (cardNum) => {
     const lastDigit = parseInt(cardNum[15]);
     if(lastDigit%2 === 0){
@@ -60,14 +66,18 @@ const giftType = (cardNum) => {
     }
 }
 
-
+// get first 2 char 
 const firstTwo = (data) =>{
     return data[0] + data[1];
 }
 
+// get last two char 
 const lastTwo = (data) =>{
     return data[2] + data[3];
 }
+
+
+
 
 cardDistribution([
     { name: "Fahim", birthYear: 1999, currentYear: 2022, district: "Dhaka", postNo: 1200, priority: 2},
